@@ -55,7 +55,7 @@ internal class GeelyHudGuidanceView(
         canvas.scale(scale, scale, width * 0.5f, height * 0.5f)
         canvas.translate(-width * 0.08f, 0.0f)
 
-        val base = min(height, width * 0.45f)
+        val base = min(height.toFloat(), width * 0.45f)
         val centerY = height * 0.67f
         drawArrow(canvas, current.icon, width * 0.031f, centerY, base * 0.38f)
 

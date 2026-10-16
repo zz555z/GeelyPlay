@@ -88,10 +88,12 @@ internal object GeelyWheelKeys {
                 if (packageName != null) {
                     oneOsTransact(
                         oneOsInputBinder, TRANSACTION_UNREGISTER_LISTENER, INPUT_MANAGER_DESCRIPTOR,
-                    ) { parcel ->
-                        parcel.writeStrongBinder(binder)
-                        parcel.writeString(packageName)
-                    }
+                        write = { parcel ->
+                            parcel.writeStrongBinder(binder)
+                            parcel.writeString(packageName)
+                        },
+                        read = { Unit },
+                    )
                 }
             }
             oneOsInputBinder = null
